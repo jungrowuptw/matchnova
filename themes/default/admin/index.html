@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>MatchNova中文教學後台</title>
+	<title>CF-blog后台</title>
     <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/gdtool/zhaopp/cfblog/favicon.ico" />
 	<link rel="shortcut icon" type="image/x-icon"  href="https://cdn.jsdelivr.net/gh/gdtool/zhaopp/cfblog/favicon.ico"/>
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
@@ -36,13 +36,13 @@
 				<a href="#list" data-toggle="tab">我的文章</a>
 			</li>
 			<li  class="active">
-				<a href="#new" data-toggle="tab">新增文章</a>
+				<a href="#new" data-toggle="tab">新建</a>
 			</li>
 			<li>
-				<a href="#config" data-toggle="tab">設定</a>
+				<a href="#config" data-toggle="tab">设置</a>
 			</li>
 			<li>
-				<a href="#pub" data-toggle="tab">發佈</a>
+				<a href="#pub" data-toggle="tab">发布</a>
 			</li>
 		</ul>
 	</div>
@@ -52,47 +52,47 @@
 	<div class="tab-pane fade" id="list">
 		<div class="container" >
 			<table class="table  table-striped" id="articleList">
-				  <tr><td>ID</td><td>標題</td><td>創建日期</td></tr>
+				  <tr><td>ID</td><td>标题</td><td>创建日期</td></tr>
 			</table>
 			<input type="hidden"  name="page" id="page" value='1'>
-			<a id="loadmore" class="btn btn-default">加載更多...</a>
+			<a id="loadmore" class="btn btn-default">加载更多...</a>
 		</div> 
 	</div>
 	<div class="tab-pane fade in active" id="new">
 		<div class="container">
-			<h3 id="labelNew">新增<span style="color: red;">*</span></h3>   
+			<h3 id="labelNew">新增</h3>   
 			<form id="addNewForm"  class="form-inline" >
 				<div class="form-group" style="width: 98%">
 					<input type="hidden" class="form-control" name="id" id="id" >
-					<input type="text" class="form-control" name="title" id="title" placeholder="標題" style="width: 100%;" required="true">
+					<input type="text" class="form-control" name="title" id="title" placeholder="标题" style="width: 100%;" required="true">
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">標題圖片</label>
+					<label for="exampleInputEmail2">特色图片</label>
 					<input type="url" class="form-control" style="width: 400px;"  name="img" id="img" placeholder="" >
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">永久連結</label>
+					<label for="exampleInputEmail2">永久链接</label>
 					<input type="text" class="form-control" name="link" id="link" placeholder="" required="true">
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">創建日期<span style="color: red;">*</span></label>
+					<label for="exampleInputEmail2">创建日期</label>
 					<input type="datetime-local" class="form-control" id="createDate" name="createDate" placeholder=""  required="true">
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">分類<span style="color: red;">*</span></label>
+					<label for="exampleInputEmail2">分类</label>
 					<select class="selectpicker" multiple name="category[]" id="category">
 					</select>
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">標籤</label>
-					<input type="text" class="form-control" name="tags" id="tags" placeholder="標籤1,標籤2">
+					<label for="exampleInputEmail2">标签</label>
+					<input type="text" class="form-control" name="tags" id="tags" placeholder="标签1,标签2">
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">權重</label>
-					<input type="text" class="form-control" name="priority" id="priority" value='0.5' placeholder="權重">
+					<label for="exampleInputEmail2">权重</label>
+					<input type="text" class="form-control" name="priority" id="priority" value='0.5' placeholder="权重">
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">更新頻率</label>
+					<label for="exampleInputEmail2">更新频率</label>
 					    <select class="form-control" id="changefreq" name="changefreq">
 						<option value="daily" selected  = "selected" >daily</option>
 						<option value="hourly" >hourly</option>
@@ -103,7 +103,7 @@
 						<option value="always" >always</option>
 					    </select>
 				</div>
-					<a  tabindex="0"  role="button"  type="submit" id="btn_saveAddNew" class="btn btn-default" onclick="saveAddNew()">儲存</a>
+					<a  tabindex="0"  role="button"  type="submit" id="btn_saveAddNew" class="btn btn-default" onclick="saveAddNew()">保存</a>
 					
 				<div id="content"><textarea style="display:none;"></textarea></div>
 			</form>
@@ -115,36 +115,36 @@
 		<div class="container" >
 			<form id="configForm" role="form" >
 				<div class="form-group">
-				    <label for="name">分類, 例:<code>["類別A","類別B","類別C","類別D"]</code></label>
-					<textarea class="form-control" id="WidgetCategory" name="WidgetCategory" rows="3" placeholder='["分類A","分類B"]'></textarea>
+				    <label for="name">分类, 例:<code>["类别A","类别B","类别C","类别D"]</code></label>
+					<textarea class="form-control" id="WidgetCategory" name="WidgetCategory" rows="3" placeholder='["分类A","分类B"]'></textarea>
 				</div>
 	
 				<div class="form-group">
-				    <label for="name">選單, 例:<code>[{"title":"技術文章","url":"/category/技術文章"},{"title":"管理","url":"/admin"}]</code></label>
+				    <label for="name">菜单, 例:<code>[{"title":"技术文章","url":"/category/技术文章"},{"title":"管理","url":"/admin"}]</code></label>
 					<textarea class="form-control" id="WidgetMenu" name="WidgetMenu" rows="5"  placeholder='[
-	{"title":"選單A"	,"url":"/category/選單A"},
-	{"title":"選單B"	,"url":"/category/選單B"}
+	{"title":"菜单A"	,"url":"/category/菜单A"},
+	{"title":"菜单B"	,"url":"/category/菜单B"}
 ]'></textarea>
 				</div>
 				<div class="form-group">
-				    <label for="name">其他連結, 例:<code>[{"title":"我的好友","url":"https://blog.gezhong.vip/"},{"title":"Google","url":"https://www.google.com/"}]</code></label>
+				    <label for="name">其他链接, 例:<code>[{"title":"我的好友","url":"https://blog.gezhong.vip/"},{"title":"谷歌","url":"https://www.google.com/"}]</code></label>
 					<textarea class="form-control" id="WidgetLink" name="WidgetLink" rows="5"  placeholder='[
 	{"title":"好友"	,"url":"https://blog.gezhong.vip/"},
 	{"title":"谷歌"	,"url":"https://www.google.com/"}
 ]'></textarea>
 				</div>
-				<a  tabindex="0"  role="button"  type="submit" id="btn_saveConfig" class="btn btn-default" onclick="saveConfig()">儲存</a>
+				<a  tabindex="0"  role="button"  type="submit" id="btn_saveConfig" class="btn btn-default" onclick="saveConfig()">保存</a>
 			</form>
 			
 
 			<form id="importForm" role="form" >
 				<div class="form-group">
-				    <label for="name">匯出/匯入</label>
-					<textarea class="form-control" id="importJson" name="importJson" rows="3" placeholder='複製完整的匯出json'></textarea>
+				    <label for="name">导出/导入</label>
+					<textarea class="form-control" id="importJson" name="importJson" rows="3" placeholder='复制完整的导出json'></textarea>
 				</div>
 
-				<a  tabindex="0"  role="button"  type="submit" id="btn_import" class="btn btn-default" onclick="importBlog()">匯入</a>
-				<a  tabindex="0"  role="button"  type="submit" id="btn_export" class="btn btn-default"  href="/admin/export/" >匯出</a>
+				<a  tabindex="0"  role="button"  type="submit" id="btn_import" class="btn btn-default" onclick="importBlog()">导入</a>
+				<a  tabindex="0"  role="button"  type="submit" id="btn_export" class="btn btn-default"  href="/admin/export/" >导出</a>
 			</form>
 
 			
@@ -155,11 +155,11 @@
 		<div class="container" >
 			<div class="jumbotron" >
 				<p class="lead">
-				由於前端使用Cache,以下操作需要發佈:新增文章、發佈文章、修改後台配置、修改workers配置</br>
-				前端生效需要ctrl+F5 強制刷新
+				由于前端使用缓存,以下操作需要发布:新建文章、发布文章、修改后台配置、修改workers配置</br>
+				前端生效需要ctrl+F5 强制刷新
 				</p>
 				
-				<a href="#" class="btn btn-default" onclick="publish()">發佈</a>
+				<a href="#" class="btn btn-default" onclick="publish()">发布</a>
 			</div>
 		</div>
 	</div>	
@@ -225,9 +225,8 @@
     function saveAddNew(){
         if(
             $('#WidgetMenu').val() == "" || $('#WidgetMenu').val() == null
-            || $('#title').val() == "" || $('#title').val() == null
             || $('#createDate').val() == "" || $('#createDate').val() == null
-            || $('#category').val() == "" || $('#category').val() == null
+            || $('#createDate').val() == "" || $('#createDate').val() == null
         
         ){
            alert("信息不全");
@@ -244,15 +243,15 @@
 			contentType: "application/json; charset=utf-8",
 			data: JSON.stringify($("#addNewForm").serializeArray()), 
             success: function (result) {
-                if("msg" in result){
-                  if ("id" in result){
+                if ("id" in result){
                     $('#id').val(result.id);
-                    $('#labelNew').text("编辑:"+result.id);
-                  }
-                  alert(result.msg);
-                }else {
-                  alert("失敗");
+					$('#labelNew').text("编辑:"+result.id);
+                    alert(result.msg);
                 }
+                else 
+                {
+					alert("失败");
+				}
             }
         });
     }
@@ -260,12 +259,12 @@
     function saveConfig(){
         if(!isJSON($('#WidgetCategory').val()))
         {
-            alert("分類格式錯誤"); 
+            alert("分类格式错误"); 
             return false;
         }
         if(!isJSON($('#WidgetMenu').val()))
         {
-            alert("選單格式錯誤"); 
+            alert("菜单格式错误"); 
             return false;
         }
         $.ajax({
@@ -283,7 +282,7 @@
     function importBlog(){
         if(!isJSON($('#importJson').val()))
         {
-            alert("匯入格式錯誤"); 
+            alert("导入格式错误"); 
             return false;
         }
         $.ajax({
@@ -299,7 +298,7 @@
     }
     //发布
     function publish(){
-        if (confirm("確定發佈?發佈後將清除所有靜態Cache,重新生成")==false){ 
+        if (confirm("确定吗?发布将清理所有静态缓存,重新生成")==false){ 
             return false; 
           }
         $.ajax({
