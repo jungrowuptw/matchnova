@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>编辑文章 - CF-blog后台</title>
+    <title>編輯文章 - MatchNova超完整中文攻略</title>
     <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/gdtool/zhaopp/cfblog/favicon.ico" />
 	<link rel="shortcut icon" type="image/x-icon"  href="https://cdn.jsdelivr.net/gh/gdtool/zhaopp/cfblog/favicon.ico"/>
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
@@ -39,41 +39,41 @@
 <div id="myTabContent" class="tab-content" style="padding-top: 60px;">
 
 		<div class="container">
-			<h3>编辑文章</h3>   
+			<h3>編輯文章</h3>   
 
 			<form id="editForm" class="form-inline"  action="/" >
 
 				<div class="form-group" style="width: 98%">
 					<input type="hidden" class="form-control" name="id" id="id" readonly required="true">
-					<input type="text" class="form-control" name="title" id="title" placeholder="标题" style="width: 800px;" required="true">
+					<input type="text" class="form-control" name="title" id="title" placeholder="標題" style="width: 800px;" required="true">
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">特色图片</label>
+					<label for="exampleInputEmail2">特色圖片</label>
 					<input type="url" class="form-control" style="width: 400px;"  name="img" id="img" placeholder="" >
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">永久链接</label>
+					<label for="exampleInputEmail2">永久連結</label>
 					<input type="text" class="form-control" name="link" id="link" placeholder="" style="vertical-align:left !important;" required="true">
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">创建日期</label>
+					<label for="exampleInputEmail2">創建日期</label>
 					<input type="datetime-local" class="form-control" id="createDate" name="createDate" placeholder="" style="vertical-align:left !important;" required="true">
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">分类</label>
+					<label for="exampleInputEmail2">分類</label>
 					<select class="selectpicker" multiple name="category[]" id="category">
 					</select>
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">标签</label>
-					<input type="text" class="form-control" name="tags" id="tags" placeholder="标签1,标签2">
+					<label for="exampleInputEmail2">標籤</label>
+					<input type="text" class="form-control" name="tags" id="tags" placeholder="標籤1,標籤2">
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">权重</label>
-					<input type="text" class="form-control" name="priority" id="priority" value='0.5' placeholder="权重">
+					<label for="exampleInputEmail2">權重</label>
+					<input type="text" class="form-control" name="priority" id="priority" value='0.5' placeholder="權重">
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail2">更新频率</label>
+					<label for="exampleInputEmail2">更新頻率</label>
 					    <select class="form-control" id="changefreq" name="changefreq">
 						<option value="daily" >daily</option>
 						<option value="hourly" >hourly</option>
@@ -146,7 +146,7 @@
     }
     //删除
     function deleteArticle(){
-        if (confirm("确定删除吗?删除后重新发布才能生效")==false){ 
+        if (confirm("確定刪除?删除後需重新發佈才能生效")==false){ 
             return false; 
           }
         $.ajax({
