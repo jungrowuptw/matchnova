@@ -152,7 +152,7 @@
         uploadCallbackURL    : "",
         
         toc                  : true,           // Table of contents
-        tocm                 : false,           // Using [TOCM], auto create ToC dropdown menu
+        tocm                 : true,           // Using [TOCM], auto create ToC dropdown menu
         tocTitle             : "",             // for ToC dropdown menu btn
         tocDropdown          : false,
         tocContainer         : "",
@@ -3490,7 +3490,7 @@
                     });
 
                     text = text.replace(atLinkReg, function($1, $2) {
-                        return "<a target=\"_blank\" href=\"" + editormd.urls.atLinkBase + "" + $2 + "\" title=\"&#64;" + $2 + "\" class=\"at-link\">" + $1 + "</a>";
+                        return "<a target='_blank' href=\"" + editormd.urls.atLinkBase + "" + $2 + "\" title=\"&#64;" + $2 + "\" class=\"at-link\">" + $1 + "</a>";
                     }).replace(/_#_&#64;_#_/g, "@");
                 }
                 
@@ -3521,7 +3521,7 @@
                 }
             }
 
-            var out = "<a target=\"_blank\" href=\"" + href + "\"";
+            var out = "<a target='_blank' href=\"" + href + "\"";
             
             if (atLinkReg.test(title) || atLinkReg.test(text))
             {
@@ -3897,7 +3897,7 @@
             toc                  : true,
             tocm                 : false,
             tocStartLevel        : 1,
-            tocTitle             : "目錄",
+            tocTitle             : "",
             tocDropdown          : false,
             tocContainer         : "",
             markdown             : "",
