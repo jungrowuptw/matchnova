@@ -3385,7 +3385,7 @@
     editormd.markedRenderer = function(markdownToC, options) {
         var defaults = {
             toc                  : true,           // Table of contents
-            tocm                 : false,
+            tocm                 : true,
             tocStartLevel        : 1,              // Said from H1 to create ToC  
             pageBreak            : true,
             atLink               : true,           // for @link
