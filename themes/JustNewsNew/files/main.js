@@ -1526,7 +1526,7 @@
               }
             }
           } else {
-            $this.replaceWith('<a class="j-wpcom-lightbox" href="' + url + '">' + tr.outerHTML + "</a>");
+            $this.replaceWith('<a target="_blank" class="j-wpcom-lightbox" href="' + url + '">' + tr.outerHTML + "</a>");
             if (!("micromessenger" != prefixpart.match(/MicroMessenger/i) && "baiduboxapp" != prefixpart.match(/baiduboxapp/i))) {
               urlList.push(url);
             }
