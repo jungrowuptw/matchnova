@@ -3712,7 +3712,7 @@
         
         if ((tocContainer.length < 1 && container.attr("previewContainer") === "false"))
         {
-            var tocHTML = "<div class=\"markdown-toc " + classPrefix + "markdown-toc\"></div>";
+            var tocHTML = "<div id=\"md-post-toc\" class=\"markdown-toc " + classPrefix + "markdown-toc\"></div>";
             
             tocHTML = (tocDropdown) ? "<div class=\"" + classPrefix + "toc-menu\">" + tocHTML + "</div>" : tocHTML;
             
