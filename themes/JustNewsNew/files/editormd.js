@@ -3612,7 +3612,7 @@
                 text = (isTeXLine) ? text.replace(/\$/g, "") : text;
             }
             
-            var tocHTML = "<div class=\"markdown-toc editormd-markdown-toc\">" + text + "</div>";
+            var tocHTML = "<div id=\"md-post-toc\" class=\"markdown-toc editormd-markdown-toc\">" + "</div>";
             
             return (isToC) ? ( (isToCMenu) ? "<div class=\"editormd-toc-menu\">" + tocHTML + "</div><br/>" : tocHTML )
                            : ( (pageBreakReg.test(text)) ? this.pageBreak(text) : "<p" + isTeXAddClass + ">" + this.atLink(this.emoji(text)) + "</p>\n" );
